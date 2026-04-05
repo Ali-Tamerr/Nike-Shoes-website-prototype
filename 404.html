@@ -6,7 +6,7 @@
   <title>Redirecting...</title>
   <script>
     const isGitHubPages = window.location.hostname.includes('github.io');
-    const baseUrl = isGitHubPages ? '/nike-shoes-website-project' : '';
+    const baseUrl = isGitHubPages ? `/${window.location.pathname.split('/')[1]}` : '';
     sessionStorage.redirect = location.pathname;
     window.location.href = baseUrl + '/';
   </script>
