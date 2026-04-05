@@ -5,10 +5,21 @@
     <link rel="icon" type="image/svg+xml" href="/nike-shoes-website-project/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nike</title>
-    <script type="module" crossorigin src="/nike-shoes-website-project/assets/index-DnzXJaA4.js"></script>
+    <script type="module" crossorigin src="/nike-shoes-website-project/assets/index-8rDQnE9A.js"></script>
     <link rel="stylesheet" crossorigin href="/nike-shoes-website-project/assets/index-Bg8O92wq.css">
   </head>
   <body>
     <div id="root"></div>
+    <script>
+       if (sessionStorage.redirect) {
+         const isGitHubPages = window.location.hostname.includes('github.io');
+         const baseUrl = isGitHubPages ? '/nike-shoes-website-project' : '';
+         const redirect = sessionStorage.redirect;
+         delete sessionStorage.redirect;
+         if (redirect && redirect !== (baseUrl || '/') && redirect !== (baseUrl + '/')) {
+           window.location.href = baseUrl + (redirect.startsWith(baseUrl) ? redirect.slice(baseUrl.length) : redirect);
+         }
+       }
+    </script>
   </body>
 </html>
