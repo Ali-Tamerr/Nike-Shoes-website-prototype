@@ -8,12 +8,16 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx">
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
        if (sessionStorage.redirect) {
-      const baseUrl = '/nike-shoes-website-project';
-      const redirect = sessionStorage.redirect;
-      delete sessionStorage.redirect;
-      window.location.href = baseUrl + redirect;
+         const isGitHubPages = window.location.hostname.includes('github.io');
+         const baseUrl = isGitHubPages ? `/${window.location.pathname.split('/')[1]}` : '';
+         const redirect = sessionStorage.redirect;
+         delete sessionStorage.redirect;
+         if (redirect && redirect !== (baseUrl || '/') && redirect !== (baseUrl + '/')) {
+           window.location.href = baseUrl + (redirect.startsWith(baseUrl) ? redirect.slice(baseUrl.length) : redirect);
+         }
        }
     </script>
   </body>

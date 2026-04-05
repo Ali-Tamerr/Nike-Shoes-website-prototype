@@ -63,8 +63,12 @@ const App = () => {
     }
   }
 
+  const isGitHubPages = window.location.hostname.includes('github.io');
+  // Automatically extract the repository name from the URL for GitHub Pages
+  const basename = isGitHubPages ? `/${window.location.pathname.split('/')[1]}` : '';
+
   return (
-    <Router basename='/nike-shoes-website-project'>
+    <Router basename={basename}>
       <main className="relative">
         <Nav cartCount={cartCount} />
         <Routes>
