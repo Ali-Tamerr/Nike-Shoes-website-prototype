@@ -32,7 +32,7 @@ const Nav = ({ cartCount, resetCart }) => {
     const handleCloseModal = () => setModalOpen(false);
 
     return (
-        <header className='padding-x py-8 fixed z-20 w-full bg-white border-b border-coral-red shadow-md font-montserrat'>
+        <header className='padding-x py-4 fixed z-20 w-full bg-white border-b border-coral-red shadow-md font-montserrat'>
             <nav className='flex justify-between items-center max-container'>
                 <div className='flex-1'>
                     <Link to="/" className='inline-block text-coral-red'>
