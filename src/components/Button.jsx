@@ -1,3 +1,5 @@
+import { ArrowRight } from "lucide-react";
+
 const Button = ({ label, iconURL, btnCustom, fullWidth, Padding }) => {
   return (
     <button
@@ -9,11 +11,9 @@ const Button = ({ label, iconURL, btnCustom, fullWidth, Padding }) => {
     >
       <span>{label}</span>
       {iconURL && (
-        <img
-          src={iconURL}
-          alt="arrow right icon"
-          className="ml-2 rounded-full w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-        />
+        <span className="ml-2 w-6 h-6 rounded-full bg-white flex items-center justify-center text-coral-red shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+          <ArrowRight className="w-4 h-4 stroke-[2.5]" />
+        </span>
       )}
     </button>
   );
