@@ -71,13 +71,13 @@ const Hero = () => {
       </div>
 
       {/* Lower Part - Interactive Shoe Stage */}
-      <div className="relative w-full flex justify-center items-center flex-1 min-h-[220px] sm:min-h-[280px] max-h-[420px] py-6 bg-hero bg-cover bg-center rounded-3xl overflow-hidden shadow-inner my-1">
+      <div className="relative w-full flex justify-center items-center flex-1 min-h-[280px] py-6 bg-hero bg-cover bg-center rounded-3xl overflow-hidden shadow-inner my-1">
         {/* Main Big Shoe Product Display */}
         <img
           key={bigShoeImg}
           src={bigShoeImg}
           alt="Nike Shoe Collection"
-          className="object-contain relative w-[240px] sm:w-[340px] xl:w-[420px] max-h-[70%] max-w-full z-10"
+          className="object-contain relative w-[280px] sm:w-[360px] xl:w-[460px] max-h-[80%] max-w-full z-10"
         />
 
         {/* Shoe Thumbnails Dock - Positioned on the left side */}
