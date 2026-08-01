@@ -1,24 +1,33 @@
-const ShoeCard = ({imgURL, changeBigShoeImage, bigShoeImg}) => {
+const ShoeCard = ({ imgURL, changeBigShoeImage, bigShoeImg }) => {
+  const isSelected = bigShoeImg === imgURL.bigShoe;
 
-    const handleClick = () => {
-        if(bigShoeImg !== imgURL.bigShoe) {
-            changeBigShoeImage(imgURL.bigShoe)
-        }
+  const handleClick = () => {
+    if (!isSelected) {
+      changeBigShoeImage(imgURL.bigShoe);
     }
-  return (
-    <div className={` outline border-[3.5px]  border-transparent rounded-[14.7px]
-        big-shoe-card ${bigShoeImg === imgURL.bigShoe 
-        ? 'outline-coral-red' : 'outline-transparent'}
-        cursor-pointer max-sm:flex-1  -outline-offset-[4px] outline-[5px] hover:border-black-half-transparent  transition`} 
-        onClick={handleClick}>
-            <div className="flex justify-center items-center bg-card
-             bg-center bg-cover sm:h-[12rem] rounded-[12px] h-[103px] max-sm:p-4 ">
-                <img src={imgURL.thumbnail} alt="shoe collection" 
-                width={157} height={103}
-                className="object-contain p-3 max-md:p-0"/>
-            </div>
-        </div>
-  )
-}
+  };
 
-export default ShoeCard
+  return (
+    <div
+      className={`relative cursor-pointer rounded-2xl transition-all duration-300 ease-out group overflow-hidden ${
+        isSelected
+          ? 'border-2 border-coral-red bg-white/90 shadow-xl shadow-coral-red/20 scale-105 ring-4 ring-coral-red/15'
+          : 'border border-slate-200/80 bg-white/70 backdrop-blur-md hover:bg-white/90 hover:border-coral-red/50 hover:shadow-lg hover:-translate-y-1'
+      }`}
+      onClick={handleClick}
+    >
+      <div className="flex justify-center items-center bg-card bg-center bg-cover sm:w-32 sm:h-32 w-24 h-24 rounded-xl p-2 sm:p-3 relative">
+        <img
+          src={imgURL.thumbnail}
+          alt="shoe thumbnail"
+          width={120}
+          height={90}
+          className="object-contain transition-transform duration-300 group-hover:scale-110"
+        />
+       
+      </div>
+    </div>
+  );
+};
+
+export default ShoeCard;
