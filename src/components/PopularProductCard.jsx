@@ -1,4 +1,4 @@
-import { star } from "../assets/icons"
+import Rating from './Rating';
 import { Link } from 'react-router-dom'
 
 const PopularProductCard = ({...products}) => {
@@ -10,10 +10,7 @@ const PopularProductCard = ({...products}) => {
         <a href="#product-detail">
         <img src={products.imgURL} alt={products.name}
         className="max-w-[280px] w-full"/>
-        <div className="mt-8 w-max flex justify-start gap-2.5">
-            <img src={star} alt="rating" width={24} height={24}/>
-            <p className="font-montserrat text-[9%0] leading-normal text-slate-gray cursor-pointer">{products.rate}</p>
-        </div>
+        <Rating rating={products.rate} className="mt-8 w-max justify-start" textStyle="text-[90%] leading-normal cursor-pointer" />
         <h3 className="mt-2 text-2xl text-[100%] leading-normal w-max font-semibold font-palanquin cursor-pointer">{products.name}</h3>
         <p className="mt-2 font-semibold font-montserrat w-max text-2xl leading-normal cursor-pointer text-coral-red text-2lxl">{products.price}</p>
         </a>

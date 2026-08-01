@@ -1,7 +1,7 @@
 import React from 'react'
 import { products } from '../constants';
 import Button from '../components/Button';
-import { star } from '../assets/icons';
+import Rating from '../components/Rating';
 import { Link } from 'react-router-dom';
 const ShoesList = () => {
   const handleClick = () => {
@@ -20,10 +20,7 @@ const ShoesList = () => {
                 className="max-w-[200px] w-full" />
               <div className='flex flex-col max-md:items-center'>
                 <h3 className="text-3xl leading-normal w-max font-semibold font-palanquin cursor-pointer">{product.name}</h3>
-                <div className="mt-8 w-max flex justify-start gap-2.5">
-                  <img src={star} alt="rating" width={24} height={24} />
-                  <p className="font-montserrat leading-normal text-slate-gray cursor-pointer">{product.rate}</p>
-                </div>
+                <Rating rating={product.rate} className="mt-8 w-max justify-start" textStyle="leading-normal cursor-pointer" />
                 <p className="mt-2 font-semibold font-montserrat w-max text-2xl leading-normal cursor-pointer text-coral-red text-2lxl">{product.price}</p>
               </div>
               <div className='flex flex-col ml-auto items-end max-md:ml-0 max-lg:items-center'>

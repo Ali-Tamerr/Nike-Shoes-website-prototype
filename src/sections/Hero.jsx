@@ -37,7 +37,7 @@ const Hero = () => {
           {/* Hero Title */}
           <h1 className="font-palanquin text-5xl sm:text-7xl xl:text-[84px] font-extrabold tracking-tight text-slate-900 leading-[1.08] mb-6">
             <span className="block">The New Arrival</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-coral-red via-orange-500 to-coral-red inline-block mt-2">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-coral-red via-indigo-300 to-coral-red inline-block mt-2">
               Nike
             </span>{" "}
             <span>Shoes</span>

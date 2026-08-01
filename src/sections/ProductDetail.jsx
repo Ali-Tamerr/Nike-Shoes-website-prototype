@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { products } from "../constants";
-import { arrowRight, star } from "../assets/icons"
+import { arrowRight } from "../assets/icons";
 import Button from '../components/Button';
+import Rating from '../components/Rating';
 import { useRef, useState, useEffect } from 'react';
 import PopularProductCard from '../components/PopularProductCard';
 import useAddToCartLabel from '../hooks/useAddToCartLabel';
@@ -57,10 +58,7 @@ const ProductDetail = ({ incrementCartCount }) => {
                         </div>
                         <div className='flex flex-col gap-3 mt-2'>
                             <p className='text-xl'>Price: <span className='font-semibold'>{product.price}</span></p>
-                            <div className="w-max flex justify-start items-end gap-2.5">
-                                <img src={star} alt="rating" className='w-7'/>
-                                <p className="font-montserrat text-xl text-slate-gray cursor-pointer">{product.rate}</p>
-                            </div>
+                            <Rating rating={product.rate} className="w-max justify-start items-end" starSize={28} textStyle="text-xl cursor-pointer" />
                         </div>
                     </div>
                     <div className='flex w-full' onClick={ClickSuccess}>
