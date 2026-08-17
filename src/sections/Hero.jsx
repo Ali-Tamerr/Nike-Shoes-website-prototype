@@ -81,7 +81,7 @@ const Hero = () => {
         />
 
         {/* Shoe Thumbnails Dock - Positioned on the left side */}
-        <div className="flex sm:gap-6 gap-3 absolute bottom-3 sm:bottom-4 left-4 sm:left-12 z-20">
+        <div className="flex sm:gap-6 gap-3 absolute bottom-3 sm:bottom-4 left-4 sm:left-12 z-10">
           {shoes.map((shoe, index) => (
             <div key={index}>
               <ShoeCard
